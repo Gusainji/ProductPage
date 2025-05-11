@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Page</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- Responsive Navbar -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="brand">Store</div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#">Home</a>
+      <a href="#">Shop</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <div class="hamburger" id="hamburger">&#9776;</div>
+  </div>
+</header>
+
+
+  <!-- Product Image Gallery -->
+  <div class="product-gallery">
+    <div class="thumbnails" id="thumbnails">
+      <img src="/images/whiteShoe.jpg" alt="thumb1" class="active" />
+      <img src="/images/blackShoe.jpg" alt="thumb2" />
+      <img src="/images/redShoe.jpg" alt="thumb3" />
+      <img src="/images/cap1.jpg" alt="thumb4" />
+      <img src="/images/dress2.jpg" alt="thumb5" />
+      <img src="/images/socks.jpg" alt="thumb6" />
+    </div>
+    <div class="main-image" id="mainImageContainer">
+      <img src="/images/dress1.jpg" alt="Main Product Image" id="mainImage" />
+    </div>
+  </div>
+
+  <!-- Product Options -->
+  <section class="product-options">
+    <div class="color-options">
+      <p>Color:</p>
+      <button class="color-swatch active" data-color="Black">Black</button>
+      <button class="color-swatch" data-color="Red">Red</button>
+      <button class="color-swatch" data-color="White">White</button>
+      <button id="compareColorsBtn">Compare Colours</button>
+    </div>
+
+    <div class="size-options">
+      <p>Size:</p>
+      <select id="sizeSelect">
+        <option value="">Select Size</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+      <button id="sizeChartBtn">Size Chart</button>
+    </div>
+
+    <div id="variantLabel">Selected: Black / -</div>
+  </section>
+
+  <!-- Size Chart Modal -->
+  <div id="sizeChartModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeSizeChart">&times;</span>
+      <h3>Size Chart</h3>
+      <table>
+        <tr><th>Size</th><th>US</th><th>EU</th></tr>
+        <tr><td>6</td><td>6</td><td>39</td></tr>
+        <tr><td>7</td><td>7</td><td>40</td></tr>
+        <tr><td>8</td><td>8</td><td>41</td></tr>
+        <tr><td>9</td><td>9</td><td>42</td></tr>
+        <tr><td>10</td><td>10</td><td>43</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Compare Colors Modal -->
+  <div id="compareModal" class="modal hidden">
+    <div class="modal-content">
+      <span id="closeCompare" class="close">&times;</span>
+      <h2>Compare Colors</h2>
+      <div class="swatch-list">
+        <label><input type="checkbox" class="swatch-checkbox" data-color="#000000" data-name="Black" data-img="black.jpg"> Black</label>
+        <label><input type="checkbox" class="swatch-checkbox" data-color="#FF0000" data-name="Red" data-img="red.jpg"> Red</label>
+        <label><input type="checkbox" class="swatch-checkbox" data-color="#FFFFFF" data-name="White" data-img="white.jpg"> White</label>
+      </div>
+      <button id="compareBtn">Compare</button>
+      <div id="comparisonResult" class="comparison hidden"></div>
+    </div>
+  </div>
+
+  <!-- Pair Well With Section -->
+  <section class="pair-well">
+    <h2>Pair Well With</h2>
+    <div class="carousel">
+      <div class="pair-item">
+        <img src="/images/socks.jpg" alt="Socks" />
+        <p>Comfort Socks</p>
+        <p>$9.99</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="pair-item">
+        <img src="/images/cap2.jpg" alt="Cap" />
+        <p>Cool Cap</p>
+        <p>$14.99</p>
+        <button>Add to Cart</button>
+      </div>
+      <div class="pair-item">
+        <img src="/images/band.jpg" alt="Wristband" />
+        <p>Wristband</p>
+        <p>$4.99</p>
+        <button>Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Bundle -->
+  <section class="product-bundle">
+    <h2>Buy These Together</h2>
+    <div class="bundle-items">
+      <div>
+        <img src="/images/casualShoe.jpg" />
+        <p>$49.99</p>
+      </div>
+      <div>
+        <img src="/images/runningShoe.jpg" />
+        <p>$9.99</p>
+      </div>
+      <div>
+        <img src="/images/blackShoe.jpg" />
+        <p>$14.99</p>
+      </div>
+    </div>
+    <p class="bundle-total">Total: $74.97</p>
+    <button class="add-bundle">Add Bundle to Cart</button>
+  </section>
+
+  <!-- Product Info Tabs -->
+  <section class="product-tabs">
+    <div class="tabs">
+      <button class="tab active" data-tab="description">Description</button>
+      <button class="tab" data-tab="info">Product Information</button>
+      <button class="tab" data-tab="shipping">Shipping Details</button>
+    </div>
+    <div class="tab-content active" id="description">
+      <p>These shoes are crafted with premium materials for ultimate comfort and performance.</p>
+    </div>
+    <div class="tab-content" id="info">
+      <ul>
+        <li>Material: Mesh & Rubber</li>
+        <li>Sizes Available: 6–12</li>
+        <li>Colors: Black, White, Red</li>
+      </ul>
+    </div>
+    <div class="tab-content" id="shipping">
+      <p>Standard delivery in 5–7 business days. Free returns in 30 days.</p>
+    </div>
+  </section>
+
+  <!-- Related Products -->
+  <section class="related-products">
+    <h2>Related Products</h2>
+    <div class="related-grid">
+      <div class="product-card">
+        <div class="badge">New</div>
+        <img src="/images/runningShoe.jpg" alt="Running Shoes" />
+        <h3>Running Shoes</h3>
+        <p>$49.99</p>
+      </div>
+      <div class="product-card">
+        <div class="badge popular">Popular</div>
+        <img src="/images/casualShoe.jpg" alt="Sneakers" />
+        <h3>Casual Sneakers</h3>
+        <p>$39.99</p>
+      </div>
+      <div class="product-card">
+        <img src="/images/cap1.jpg" alt="Cap" />
+        <h3>Sports Cap</h3>
+        <p>$19.99</p>
+      </div>
+      <div class="product-card">
+        <img src="/images/bag.jpg" alt="Backpack" />
+        <h3>Travel Backpack</h3>
+        <p>$34.99</p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
